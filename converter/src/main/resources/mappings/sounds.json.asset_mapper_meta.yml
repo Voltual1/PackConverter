@@ -24,6 +24,7 @@ java:
         - ambient/nether/warped_forest/mood6
         - ambient/nether/warped_forest/mood5
         - block/bell/resonate
+        - ui/toast/challenge_complete
     matching-paths:
         - block/amethyst/break1
         - block/amethyst/break2
@@ -2917,6 +2918,117 @@ java:
         - note/icechime
         - note/bd
         - random/splash
+        - mob/zombie_nautilus/ambient1
+        - mob/zombie_nautilus/ambient2
+        - mob/zombie_nautilus/ambient3
+        - mob/zombie_nautilus/ambient4
+        - mob/zombie_nautilus/ambient5
+        - mob/zombie_nautilus/hurt4
+        - mob/zombie_nautilus/hurt3
+        - mob/zombie_nautilus/hurt2
+        - mob/zombie_nautilus/hurt1
+        - mob/zombie_nautilus/death
+        - mob/zombie_nautilus/dash_ready3
+        - mob/zombie_nautilus/dash_ready2
+        - mob/zombie_nautilus/dash_ready1
+        - mob/nautilus/ambient1
+        - mob/nautilus/ambient2
+        - mob/nautilus/ambient3
+        - mob/nautilus/ambient4
+        - mob/nautilus/ambient5
+        - mob/nautilus/ambient6
+        - mob/nautilus/ambient7
+        - mob/nautilus/ambient8
+        - mob/nautilus/dash1
+        - mob/nautilus/dash2
+        - mob/nautilus/dash3
+        - mob/nautilus/dash4
+        - mob/nautilus/dash_ready1
+        - mob/nautilus/dash_ready2
+        - mob/nautilus/dash_ready3
+        - mob/nautilus/death
+        - mob/nautilus/eat1
+        - mob/nautilus/eat2
+        - mob/nautilus/hurt1
+        - mob/nautilus/hurt2
+        - mob/nautilus/hurt3
+        - mob/nautilus/hurt4
+        - mob/nautilus/ride
+        - mob/nautilus/nautilus_saddle_equip
+        - mob/parched/ambient1
+        - mob/parched/ambient2
+        - mob/parched/ambient3
+        - mob/parched/ambient4
+        - mob/parched/death
+        - mob/parched/hurt1
+        - mob/parched/hurt2
+        - mob/parched/hurt3
+        - mob/parched/hurt4
+        - mob/parched/step1
+        - mob/parched/step2
+        - mob/parched/step3
+        - mob/parched/step4
+        - mob/camel_husk/ambient1
+        - mob/camel_husk/ambient2
+        - mob/camel_husk/ambient3
+        - mob/camel_husk/ambient4
+        - mob/camel_husk/ambient5
+        - mob/camel_husk/ambient6
+        - mob/camel_husk/ambient7
+        - mob/camel_husk/ambient8
+        - mob/camel_husk/dash1
+        - mob/camel_husk/dash2
+        - mob/camel_husk/dash3
+        - mob/camel_husk/dash4
+        - mob/camel_husk/dash5
+        - mob/camel_husk/dash6
+        - mob/camel_husk/dash_ready
+        - mob/camel_husk/death1
+        - mob/camel_husk/death2
+        - mob/camel_husk/eat1
+        - mob/camel_husk/eat2
+        - mob/camel_husk/eat3
+        - mob/camel_husk/eat4
+        - mob/camel_husk/eat5
+        - mob/camel_husk/hurt1
+        - mob/camel_husk/hurt2
+        - mob/camel_husk/hurt3
+        - mob/camel_husk/hurt4
+        - mob/camel_husk/sit1
+        - mob/camel_husk/sit2
+        - mob/camel_husk/sit3
+        - mob/camel_husk/sit4
+        - mob/camel_husk/stand1
+        - mob/camel_husk/stand2
+        - mob/camel_husk/stand3
+        - mob/camel_husk/stand4
+        - mob/camel_husk/stand5
+        - mob/camel_husk/step1
+        - mob/camel_husk/step2
+        - mob/camel_husk/step3
+        - mob/camel_husk/step4
+        - mob/camel_husk/step5
+        - mob/camel_husk/step6
+        - mob/camel_husk/step_sand1
+        - mob/camel_husk/step_sand2
+        - mob/camel_husk/step_sand3
+        - mob/camel_husk/step_sand4
+        - mob/camel_husk/step_sand5
+        - mob/camel_husk/step_sand6
+        - mob/baby_nautilus/ambient1
+        - mob/baby_nautilus/ambient2
+        - mob/baby_nautilus/ambient3
+        - mob/baby_nautilus/ambient4
+        - mob/baby_nautilus/ambient5
+        - mob/baby_nautilus/ambient6
+        - mob/baby_nautilus/death
+        - mob/baby_nautilus/eat1
+        - mob/baby_nautilus/eat2
+        - mob/baby_nautilus/hurt4
+        - mob/baby_nautilus/hurt3
+        - mob/baby_nautilus/hurt2
+        - mob/baby_nautilus/hurt1
+        - mob/horse/zombie/angry
     transformed-paths: []
     relative-path: sounds
 bedrock:
@@ -2927,6 +3039,23 @@ bedrock:
         - mob/hoglin/howl3
         - mob/hoglin/howl4
         - mob/hoglin/howl5
+        - block/permissions/shimmer/shimmerblock
+        - component/jump_to_block/jump1
+        - component/jump_to_block/jump2
+        - vr/turn1
+        - vr/turn2
+        - vr/turn3
+        - vr/turn4
+        - vr/turn5
+        - ui/hardcore/hardcore_disable
+        - ui/hardcore/hardcore_enable
+        - ui/drawer/drawer_close
+        - ui/drawer/drawer_open
+        - random/happy_cam3
+        - random/toast
+        - camera/camera_snap1
+        - camera/camera_snap2
+        - camera/camera_snap3
     matching-paths:
         - block/amethyst/break1
         - block/amethyst/break2
@@ -5820,5 +5949,116 @@ bedrock:
         - note/snare
         - note/xylobone
         - random/splash
+        - mob/zombie_nautilus/ambient1
+        - mob/zombie_nautilus/ambient2
+        - mob/zombie_nautilus/ambient3
+        - mob/zombie_nautilus/ambient4
+        - mob/zombie_nautilus/ambient5
+        - mob/zombie_nautilus/hurt4
+        - mob/zombie_nautilus/hurt3
+        - mob/zombie_nautilus/hurt2
+        - mob/zombie_nautilus/hurt1
+        - mob/zombie_nautilus/death
+        - mob/zombie_nautilus/dash_ready3
+        - mob/zombie_nautilus/dash_ready2
+        - mob/zombie_nautilus/dash_ready1
+        - mob/nautilus/ambient1
+        - mob/nautilus/ambient2
+        - mob/nautilus/ambient3
+        - mob/nautilus/ambient4
+        - mob/nautilus/ambient5
+        - mob/nautilus/ambient6
+        - mob/nautilus/ambient7
+        - mob/nautilus/ambient8
+        - mob/nautilus/dash1
+        - mob/nautilus/dash2
+        - mob/nautilus/dash3
+        - mob/nautilus/dash4
+        - mob/nautilus/dash_ready1
+        - mob/nautilus/dash_ready2
+        - mob/nautilus/dash_ready3
+        - mob/nautilus/death
+        - mob/nautilus/eat1
+        - mob/nautilus/eat2
+        - mob/nautilus/hurt1
+        - mob/nautilus/hurt2
+        - mob/nautilus/hurt3
+        - mob/nautilus/hurt4
+        - mob/nautilus/ride
+        - mob/nautilus/nautilus_saddle_equip
+        - mob/parched/ambient1
+        - mob/parched/ambient2
+        - mob/parched/ambient3
+        - mob/parched/ambient4
+        - mob/parched/death
+        - mob/parched/hurt1
+        - mob/parched/hurt2
+        - mob/parched/hurt3
+        - mob/parched/hurt4
+        - mob/parched/step1
+        - mob/parched/step2
+        - mob/parched/step3
+        - mob/parched/step4
+        - mob/camel_husk/ambient1
+        - mob/camel_husk/ambient2
+        - mob/camel_husk/ambient3
+        - mob/camel_husk/ambient4
+        - mob/camel_husk/ambient5
+        - mob/camel_husk/ambient6
+        - mob/camel_husk/ambient7
+        - mob/camel_husk/ambient8
+        - mob/camel_husk/dash1
+        - mob/camel_husk/dash2
+        - mob/camel_husk/dash3
+        - mob/camel_husk/dash4
+        - mob/camel_husk/dash5
+        - mob/camel_husk/dash6
+        - mob/camel_husk/dash_ready
+        - mob/camel_husk/death1
+        - mob/camel_husk/death2
+        - mob/camel_husk/eat1
+        - mob/camel_husk/eat2
+        - mob/camel_husk/eat3
+        - mob/camel_husk/eat4
+        - mob/camel_husk/eat5
+        - mob/camel_husk/hurt1
+        - mob/camel_husk/hurt2
+        - mob/camel_husk/hurt3
+        - mob/camel_husk/hurt4
+        - mob/camel_husk/sit1
+        - mob/camel_husk/sit2
+        - mob/camel_husk/sit3
+        - mob/camel_husk/sit4
+        - mob/camel_husk/stand1
+        - mob/camel_husk/stand2
+        - mob/camel_husk/stand3
+        - mob/camel_husk/stand4
+        - mob/camel_husk/stand5
+        - mob/camel_husk/step1
+        - mob/camel_husk/step2
+        - mob/camel_husk/step3
+        - mob/camel_husk/step4
+        - mob/camel_husk/step5
+        - mob/camel_husk/step6
+        - mob/camel_husk/step_sand1
+        - mob/camel_husk/step_sand2
+        - mob/camel_husk/step_sand3
+        - mob/camel_husk/step_sand4
+        - mob/camel_husk/step_sand5
+        - mob/camel_husk/step_sand6
+        - mob/baby_nautilus/ambient1
+        - mob/baby_nautilus/ambient2
+        - mob/baby_nautilus/ambient3
+        - mob/baby_nautilus/ambient4
+        - mob/baby_nautilus/ambient5
+        - mob/baby_nautilus/ambient6
+        - mob/baby_nautilus/death
+        - mob/baby_nautilus/eat1
+        - mob/baby_nautilus/eat2
+        - mob/baby_nautilus/hurt4
+        - mob/baby_nautilus/hurt3
+        - mob/baby_nautilus/hurt2
+        - mob/baby_nautilus/hurt1
+        - mob/horse/zombie/angry
     transformed-paths: []
     relative-path: sounds

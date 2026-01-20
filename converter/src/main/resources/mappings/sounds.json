@@ -42,11 +42,26 @@
             "underwater_ambience": "loop/underwater_ambience"
         }
     },
-    "block/ancient_debris/break1": "dig/ancient_debris1",
-    "block/ancient_debris/break2": "dig/ancient_debris2",
-    "block/ancient_debris/break3": "dig/ancient_debris3",
-    "block/ancient_debris/break4": "dig/ancient_debris4",
-    "block/ancient_debris/break5": "dig/ancient_debris5",
+    "block/ancient_debris/break1": [
+        "dig/ancient_debris1",
+        "step/ancient_debris1"
+    ],
+    "block/ancient_debris/break2": [
+        "dig/ancient_debris2",
+        "step/ancient_debris2"
+    ],
+    "block/ancient_debris/break3": [
+        "dig/ancient_debris3",
+        "step/ancient_debris3"
+    ],
+    "block/ancient_debris/break4": [
+        "dig/ancient_debris4",
+        "step/ancient_debris4"
+    ],
+    "block/ancient_debris/break5": [
+        "dig/ancient_debris5",
+        "step/ancient_debris5"
+    ],
     "block/basalt/break1": "dig/basalt1",
     "block/basalt/break2": "dig/basalt2",
     "block/basalt/break3": "dig/basalt3",
@@ -57,7 +72,7 @@
     "block/basalt/step3": "step/basalt3",
     "block/basalt/step4": "step/basalt4",
     "block/basalt/step5": "step/basalt5",
-    "block/basalt/step6": "step/basalt5",
+    "block/basalt/step6": "step/basalt6",
     "block/bone_block/break1": "dig/bone_block1",
     "block/bone_block/break2": "dig/bone_block2",
     "block/bone_block/break3": "dig/bone_block3",
@@ -237,6 +252,18 @@
             "step5": "step/step5",
             "step6": "step/step6"
         },
+        "dry_grass/wind1": "sand/wind1",
+        "dry_grass/wind10": "sand/wind10",
+        "dry_grass/wind11": "sand/wind11",
+        "dry_grass/wind12": "sand/wind12",
+        "dry_grass/wind2": "sand/wind2",
+        "dry_grass/wind3": "sand/wind3",
+        "dry_grass/wind4": "sand/wind4",
+        "dry_grass/wind5": "sand/wind5",
+        "dry_grass/wind6": "sand/wind6",
+        "dry_grass/wind7": "sand/wind7",
+        "dry_grass/wind8": "sand/wind8",
+        "dry_grass/wind9": "sand/wind9",
         "eyeblossom": {
             "eyeblossom_close1": "close1",
             "eyeblossom_close2": "close2",
@@ -678,6 +705,9 @@
     "entity/leashknot/unleash1": "leashknot/break1",
     "entity/leashknot/unleash2": "leashknot/break2",
     "entity/leashknot/unleash3": "leashknot/break3",
+    "entity/player/attack/crit1": "mob/player/attack/crit1",
+    "entity/player/attack/crit2": "mob/player/attack/crit2",
+    "entity/player/attack/crit3": "mob/player/attack/crit3",
     "entity/player/attack/strong1": "mob/player/attack/strong1",
     "entity/player/attack/strong2": "mob/player/attack/strong2",
     "entity/player/attack/strong3": "mob/player/attack/strong3",
@@ -870,6 +900,40 @@
         "goat_horn/call5": "horn/call5",
         "goat_horn/call6": "horn/call6",
         "goat_horn/call7": "horn/call7",
+        "spear": {
+            "attack1": "attackmiss1",
+            "attack2": "attackmiss2",
+            "attack3": "attackmiss3",
+            "hit1": [
+                "attackhit1",
+                "hit1"
+            ],
+            "hit2": [
+                "attackhit2",
+                "hit2"
+            ],
+            "hit3": [
+                "attackhit3",
+                "hit3"
+            ],
+            "use": "use"
+        },
+        "spear/wood/attack1": "wooden_spear/attackmiss1",
+        "spear/wood/attack2": "wooden_spear/attackmiss2",
+        "spear/wood/attack3": "wooden_spear/attackmiss3",
+        "spear/wood/hit1": [
+            "wooden_spear/attackhit1",
+            "wooden_spear/hit1"
+        ],
+        "spear/wood/hit2": [
+            "wooden_spear/attackhit2",
+            "wooden_spear/hit2"
+        ],
+        "spear/wood/hit3": [
+            "wooden_spear/attackhit3",
+            "wooden_spear/hit3"
+        ],
+        "spear/wood/use": "wooden_spear/use",
         "trident": {
             "riptide1": [
                 "riptide1",
@@ -930,6 +994,9 @@
     "item/shovel/flatten2": "block/grass/flatten2",
     "item/shovel/flatten3": "block/grass/flatten3",
     "item/shovel/flatten4": "block/grass/flatten4",
+    "item/spear/lunge1": "enchant/lunge/lunge1",
+    "item/spear/lunge2": "enchant/lunge/lunge2",
+    "item/spear/lunge3": "enchant/lunge/lunge3",
     "item/sweet_berries/pick_from_bush1": "block/sweet_berry_bush/pick_from_bush1",
     "item/sweet_berries/pick_from_bush2": "block/sweet_berry_bush/pick_from_bush2",
     "item/totem/use_totem": "random/use_totem",
@@ -1192,6 +1259,7 @@
         "zombified_piglin/zpighurt1": "zombiepig/zpighurt1",
         "zombified_piglin/zpighurt2": "zombiepig/zpighurt2"
     },
+    "mob/horse/saddle_unequip": "armor/unsaddle",
     "mob/turtle/egg/drop_egg1": "block/turtle_egg/drop_egg1",
     "mob/turtle/egg/drop_egg2": "block/turtle_egg/drop_egg2",
     "mob/turtle/egg/egg_break1": "block/turtle_egg/egg_break1",

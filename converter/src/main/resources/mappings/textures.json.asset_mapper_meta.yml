@@ -26,6 +26,7 @@ java:
         - entity/player/wide/noor
         - entity/player/wide/sunny
         - entity/player/wide/zuri
+        - block/test_instance_block
     matching-paths:
         - block/acacia_shelf
         - block/bamboo_block
@@ -442,13 +443,13 @@ java:
         - item/rib_armor_trim_smithing_template
         - item/resin_clump
         - item/resin_brick
+        - entity/iron_golem/iron_golem
     transformed-paths:
         - block/copper_chain
         - entity/conduit/base
         - block/iron_chain
         - block/weathered_copper_chain
         - block/oxidized_copper_chain
-        - block/test_instance_block
         - entity/cat/cat_collar
         - entity/chest/christmas
         - entity/chest/christmas_left
@@ -641,18 +642,24 @@ java:
         - item/recovery_compass_31
         - entity/camel/camel
         - entity/camel/camel_husk
+        - item/leather_boots_overlay
+        - item/leather_chestplate_overlay
+        - item/leather_helmet_overlay
+        - item/leather_horse_armor_overlay
+        - item/leather_leggings_overlay
+        - item/firework_star_overlay
     relative-path: textures
 bedrock:
     ignored-paths:
         - blocks/conduit_closed
         - blocks/conduit_open
         - blocks/conduit_cage
-        - block/bed_feet_end
-        - block/bed_head_top
-        - block/bed_head_side
-        - block/bed_head_end
-        - block/bed_feet_top
-        - block/bed_feet_side
+        - blocks/bed_feet_end
+        - blocks/bed_head_top
+        - blocks/bed_head_side
+        - blocks/bed_head_end
+        - blocks/bed_feet_top
+        - blocks/bed_feet_side
         - items/egg_agent
         - items/egg_bat
         - items/egg_bee
@@ -718,15 +725,6 @@ bedrock:
         - items/egg_zombie
         - items/egg_zombiehorse
         - items/egg_zombievillager
-        - items/dye_powder_cyan
-        - items/dye_powder_gray
-        - items/dye_powder_light_blue
-        - items/dye_powder_lime
-        - items/dye_powder_magenta
-        - items/dye_powder_orange
-        - items/dye_powder_pink
-        - items/dye_powder_purple
-        - items/dye_powder_silver
         - items/bed_black
         - items/bed_blue
         - items/bed_brown
@@ -755,6 +753,7 @@ bedrock:
         - items/spawn_egg_overlay
         - items/quiver
         - items/ruby
+        - items/spawn_eggs/spawn_egg_agent
     matching-paths:
         - blocks/acacia_shelf
         - blocks/bamboo_block
@@ -1177,6 +1176,7 @@ bedrock:
         - items/rib_armor_trim_smithing_template
         - items/resin_clump
         - items/resin_brick
+        - entity/iron_golem/iron_golem
     transformed-paths:
         - blocks/chest_front
         - blocks/chest_side
