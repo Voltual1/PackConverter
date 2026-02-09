@@ -30,6 +30,7 @@ import net.kyori.adventure.key.Key;
 import org.geysermc.pack.converter.type.texture.transformer.TextureTransformer;
 import org.geysermc.pack.converter.type.texture.transformer.TransformContext;
 import org.geysermc.pack.converter.util.KeyUtil;
+import org.geysermc.pack.converter.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import team.unnamed.creative.texture.Texture;
 
@@ -44,6 +45,19 @@ public abstract class GridSpritesheetParticleTransformer implements TextureTrans
     private final int columns;
     private final int particleWidth;
     private final int particleHeight;
+
+    public GridSpritesheetParticleTransformer(String bedrockPath, String javaPath, int rows, int columns, int particleWidth, int particleHeight) {
+        String[] javaPaths = new String[rows * columns];
+        for (int i = 0; i < rows * columns; i++) {
+            javaPaths[i] = javaPath.formatted(i);
+        }
+        this.javaPaths = javaPaths;
+        this.bedrockPath = bedrockPath;
+        this.rows = rows;
+        this.columns = columns;
+        this.particleWidth = particleWidth;
+        this.particleHeight = particleHeight;
+    }
 
     public GridSpritesheetParticleTransformer(String bedrockPath, int rows, int columns, int particleWidth, int particleHeight, String... javaPaths) {
         this.javaPaths = javaPaths;
@@ -64,19 +78,42 @@ public abstract class GridSpritesheetParticleTransformer implements TextureTrans
         int k = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                Texture texture = context.pollOrPeekVanilla(KeyUtil.key(Key.MINECRAFT_NAMESPACE, javaPaths[k]));
+                Texture texture = context.pollOrPeekVanilla(KeyUtil.key(Key.MINECRAFT_NAMESPACE, javaPaths[k++]));
                 if (texture == null) {
                     context.warn("%s is missing. Please report this.".formatted(javaPaths[k]));
                     continue;
                 }
 
-                BufferedImage javaImage = this.readImage(texture);
+                BufferedImage javaImage = this.preProcessImage(this.readImage(texture));
 
                 g.drawImage(javaImage, j * particleWidth, i * particleHeight, null);
-                k++;
             }
         }
 
         context.offer(KeyUtil.key(Key.MINECRAFT_NAMESPACE, this.bedrockPath), image, "png");
+    }
+
+    public BufferedImage preProcessImage(BufferedImage image) {
+        return image;
+    }
+
+    public static abstract class Row extends GridSpritesheetParticleTransformer {
+        public Row(String bedrockPath, int particleWidth, int particleHeight, String javaPath, int amount) {
+            super(bedrockPath, 1, amount, particleWidth, particleHeight, StringUtils.formatStringFor(javaPath, amount));
+        }
+
+        public Row(String bedrockPath, int particleWidth, int particleHeight, String... javaPaths) {
+            super(bedrockPath, 1, javaPaths.length, particleWidth, particleHeight, javaPaths);
+        }
+    }
+
+    public static abstract class Column extends GridSpritesheetParticleTransformer {
+        public Column(String bedrockPath, int particleWidth, int particleHeight, String javaPath, int amount) {
+            super(bedrockPath, amount, 1, particleWidth, particleHeight, StringUtils.formatStringFor(javaPath, amount));
+        }
+
+        public Column(String bedrockPath, int particleWidth, int particleHeight, String... javaPaths) {
+            super(bedrockPath, javaPaths.length, 1, particleWidth, particleHeight, javaPaths);
+        }
     }
 }

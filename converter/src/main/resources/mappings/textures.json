@@ -913,6 +913,10 @@
     "block/destroy_stage_7": "environment/destroy_stage_7",
     "block/destroy_stage_8": "environment/destroy_stage_8",
     "block/destroy_stage_9": "environment/destroy_stage_9",
+    "block/hanging_roots": [
+        "item/hanging_roots",
+        "block/hanging_roots"
+    ],
     "block/lever": [
         "block/lever",
         "item/lever"
@@ -977,7 +981,11 @@
             "triangles_top": "banner_triangles_top"
         },
         "bat": "bat_v2",
-        "bear/polarbear": "polarbear",
+        "bear/polarbear": [
+            "polar_bear",
+            "polarbear"
+        ],
+        "bear/polarbear_baby": "polar_bear/polar_bear_baby",
         "bed": {
             "black": "black",
             "blue": "blue",
@@ -1112,6 +1120,7 @@
         "equipment/llama_body/purple": "llama/decor/decor_purple",
         "equipment/llama_body/red": "llama/decor/decor_red",
         "equipment/llama_body/trader_llama": "llama/decor/trader_llama_decor",
+        "equipment/llama_body/trader_llama_baby": "llama/trader_llama_baby",
         "equipment/llama_body/white": "llama/decor/decor_white",
         "equipment/llama_body/yellow": "llama/decor/decor_yellow",
         "equipment/nautilus_body/copper": "nautilus/armor/nautilus_armor_copper",

@@ -29,6 +29,7 @@ java:
         - block/test_instance_block
         - entity/bee/bee_stinger
         - item/pointed_dripstone
+        - effect/dither
     matching-paths:
         - block/acacia_shelf
         - block/bamboo_block
@@ -548,6 +549,22 @@ java:
         - particle/raid_omen
         - particle/shriek
         - particle/infested
+        - block/golden_dandelion
+        - entity/armadillo/armadillo_baby
+        - entity/bee/bee_angry_baby
+        - entity/bee/bee_angry_nectar_baby
+        - entity/bee/bee_baby
+        - entity/bee/bee_nectar_baby
+        - entity/camel/camel_baby
+        - entity/fox/fox_baby
+        - entity/fox/fox_sleep_baby
+        - entity/fox/fox_snow_baby
+        - entity/fox/fox_snow_sleep_baby
+        - entity/goat/goat_baby
+        - entity/llama/llama_brown_baby
+        - entity/llama/llama_creamy_baby
+        - entity/llama/llama_gray_baby
+        - entity/llama/llama_white_baby
     transformed-paths:
         - block/copper_chain
         - entity/conduit/base
@@ -1001,6 +1018,59 @@ java:
         - gui/sprites/hud/locator_bar_dot/default_1
         - gui/sprites/hud/locator_bar_dot/default_2
         - gui/sprites/hud/locator_bar_dot/default_3
+        - particle/gust_0
+        - particle/gust_1
+        - particle/gust_10
+        - particle/gust_11
+        - particle/gust_2
+        - particle/gust_3
+        - particle/gust_4
+        - particle/gust_5
+        - particle/gust_6
+        - particle/gust_7
+        - particle/gust_8
+        - particle/gust_9
+        - particle/small_gust_0
+        - particle/small_gust_1
+        - particle/small_gust_2
+        - particle/small_gust_3
+        - particle/small_gust_4
+        - particle/small_gust_5
+        - particle/small_gust_6
+        - particle/leaf_0
+        - particle/leaf_1
+        - particle/leaf_10
+        - particle/leaf_11
+        - particle/leaf_2
+        - particle/leaf_3
+        - particle/leaf_4
+        - particle/leaf_5
+        - particle/leaf_6
+        - particle/leaf_7
+        - particle/leaf_8
+        - particle/leaf_9
+        - particle/pale_oak_0
+        - particle/pale_oak_1
+        - particle/pale_oak_10
+        - particle/pale_oak_11
+        - particle/pale_oak_2
+        - particle/pale_oak_3
+        - particle/pale_oak_4
+        - particle/pale_oak_5
+        - particle/pale_oak_6
+        - particle/pale_oak_7
+        - particle/pale_oak_8
+        - particle/pale_oak_9
+        - entity/spider/cave_spider
+        - entity/spider/spider
+        - entity/spider/spider_eyes
+        - entity/sheep/sheep
+        - entity/sheep/sheep_wool
+        - entity/sheep/sheep_wool_undercoat
+        - entity/sheep/sheep_baby
+        - entity/sheep/sheep_wool_baby
+        - entity/phantom/phantom
+        - entity/phantom/phantom_eyes
     relative-path: textures
 bedrock:
     ignored-paths:
@@ -1243,6 +1313,22 @@ bedrock:
         - persona_thumbnails/communication_follow_me_thumbnail_0
         - persona_thumbnails/communication_point_thumbnail_0
         - persona_thumbnails/overhead_wave_thumbnail_0
+        - ui/selected_hotbar_slot
+        - entity/villager2/professions/unskilled
+        - entity/villager/butcher
+        - entity/villager/farmer
+        - entity/villager/librarian
+        - entity/villager/priest
+        - entity/villager/smith
+        - entity/villager/villager
+        - entity/zombie_villager2/professions/unskilled
+        - entity/zombie_villager/zombie_butcher
+        - entity/zombie_villager/zombie_farmer
+        - entity/zombie_villager/zombie_librarian
+        - entity/zombie_villager/zombie_priest
+        - entity/zombie_villager/zombie_smith
+        - entity/zombie_villager/zombie_villager
+        - entity/horse2/horse_markings_none
     matching-paths:
         - blocks/acacia_shelf
         - blocks/bamboo_block
@@ -1762,6 +1848,22 @@ bedrock:
         - particle/raid_omen
         - particle/shriek
         - particle/infested
+        - blocks/golden_dandelion
+        - entity/armadillo/armadillo_baby
+        - entity/bee/bee_angry_baby
+        - entity/bee/bee_angry_nectar_baby
+        - entity/bee/bee_baby
+        - entity/bee/bee_nectar_baby
+        - entity/camel/camel_baby
+        - entity/fox/fox_baby
+        - entity/fox/fox_sleep_baby
+        - entity/fox/fox_snow_baby
+        - entity/fox/fox_snow_sleep_baby
+        - entity/goat/goat_baby
+        - entity/llama/llama_brown_baby
+        - entity/llama/llama_creamy_baby
+        - entity/llama/llama_gray_baby
+        - entity/llama/llama_white_baby
     transformed-paths:
         - blocks/chest_front
         - blocks/chest_side
@@ -2055,4 +2157,13 @@ bedrock:
         - ui/hotbar_end_cap
         - ui/hotbar_start_cap
         - ui/hotbar_start_cap
+        - particle/gust
+        - particle/small_gust
+        - particle/biome_tinted_leaves_atlas
+        - particle/pale_oak_leaves_atlas
+        - entity/spider/cave_spider
+        - entity/spider/spider
+        - entity/sheep/sheep
+        - entity/sheep/sheep_baby
+        - entity/phantom
     relative-path: textures

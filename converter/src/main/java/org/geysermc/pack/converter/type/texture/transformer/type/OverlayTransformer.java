@@ -91,7 +91,7 @@ public class OverlayTransformer implements TextureTransformer {
             new OverlayData("entity/equipment/horse_body/leather.png", "entity/equipment/horse_body/leather_overlay.png", "entity/horse2/armor/horse_armor_leather.png"),
 
             // Phantom
-            new OverlayData("entity/phantom.png", "entity/phantom_eyes.png", "entity/phantom.png", false),
+            new OverlayData("entity/phantom/phantom.png", "entity/phantom/phantom_eyes.png", "entity/phantom.png", false),
 
             // Spider
             new OverlayData("entity/spider/cave_spider.png", "entity/spider_eyes.png", "entity/spider/cave_spider.png", false, true),

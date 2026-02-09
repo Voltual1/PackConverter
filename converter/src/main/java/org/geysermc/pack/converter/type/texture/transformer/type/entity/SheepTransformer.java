@@ -46,54 +46,98 @@ public class SheepTransformer implements TextureTransformer {
     public static final String SHEEP_WOOL = "entity/sheep/sheep_wool.png";
     public static final String SHEEP_UNDERCOAT = "entity/sheep/sheep_wool_undercoat.png";
 
+    public static final String SHEEP_BABY = "entity/sheep/sheep_baby.png";
+    public static final String SHEEP_WOOL_BABY = "entity/sheep/sheep_wool_baby.png";
+
     @Override
     public void transform(@NotNull TransformContext context) throws IOException {
         Key sheepKey = KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP);
         Key woolKey = KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP_WOOL);
         Key undercoatKey = KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP_UNDERCOAT);
 
+        Key sheepBabyKey = KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP_BABY);
+        Key babyWoolKey = KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP_WOOL_BABY);
+
         if (
-                !context.isTexturePresent(sheepKey) &&
-                !context.isTexturePresent(woolKey) &&
-                !context.isTexturePresent(undercoatKey)
-        ) return;
+                context.isTexturePresent(sheepKey) ||
+                context.isTexturePresent(woolKey) ||
+                context.isTexturePresent(undercoatKey)
+        ) {
+            Texture sheepTexture = context.pollOrPeekVanilla(sheepKey);
+            Texture sheepWoolTexture = context.pollOrPeekVanilla(woolKey);
+            Texture sheepUndercoatTexture = context.pollOrPeekVanilla(undercoatKey);
 
-        Texture sheepTexture = context.pollOrPeekVanilla(sheepKey);
-        Texture sheepWoolTexture = context.pollOrPeekVanilla(woolKey);
-        Texture sheepUndercoatTexture = context.pollOrPeekVanilla(undercoatKey);
+            if (sheepTexture == null || sheepWoolTexture == null || sheepUndercoatTexture == null) {
+                return;
+            }
 
-        if (sheepTexture == null || sheepWoolTexture == null || sheepUndercoatTexture == null) {
-            return;
-        }
+            context.debug(String.format("Converting sheep texture %s", SHEEP));
 
-        context.debug(String.format("Converting sheep texture %s", SHEEP));
+            BufferedImage sheepImage = this.readImage(sheepTexture);
+            BufferedImage sheepWoolImage = this.readImage(sheepWoolTexture);
+            BufferedImage sheepUndercoatImage = this.readImage(sheepUndercoatTexture);
 
-        BufferedImage sheepImage = this.readImage(sheepTexture);
-        BufferedImage sheepWoolImage = this.readImage(sheepWoolTexture);
-        BufferedImage sheepUndercoatImage = this.readImage(sheepUndercoatTexture);
+            int width = Math.max(Math.max(sheepImage.getWidth(), sheepWoolImage.getWidth()), sheepUndercoatImage.getWidth());
+            sheepImage = ImageUtil.ensureMinWidth(sheepImage, width);
+            sheepWoolImage = ImageUtil.ensureMinWidth(sheepWoolImage, width);
+            sheepUndercoatImage = ImageUtil.ensureMinWidth(sheepUndercoatImage, width);
 
-        int width = Math.max(Math.max(sheepImage.getWidth(), sheepWoolImage.getWidth()), sheepUndercoatImage.getWidth());
-        sheepImage = ImageUtil.ensureMinWidth(sheepImage, width);
-        sheepWoolImage = ImageUtil.ensureMinWidth(sheepWoolImage, width);
-        sheepUndercoatImage = ImageUtil.ensureMinWidth(sheepUndercoatImage, width);
+            BufferedImage newImage = new BufferedImage(sheepImage.getWidth(), sheepImage.getHeight() + sheepWoolImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            Graphics g = newImage.getGraphics();
 
-        BufferedImage newImage = new BufferedImage(sheepImage.getWidth(), sheepImage.getHeight() + sheepWoolImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics g = newImage.getGraphics();
-
-        for (int x = 0; x < sheepImage.getWidth(); x++) {
-            for (int y = 0; y < sheepImage.getHeight(); y++) {
-                Color c = new Color(sheepImage.getRGB(x, y), true);
-                if (c.getAlpha() == 255) {
-                    Color tmpCol = new Color(c.getRed(), c.getGreen(), c.getBlue(), 2);
-                    newImage.setRGB(x, y, tmpCol.getRGB());
+            for (int x = 0; x < sheepImage.getWidth(); x++) {
+                for (int y = 0; y < sheepImage.getHeight(); y++) {
+                    Color c = new Color(sheepImage.getRGB(x, y), true);
+                    if (c.getAlpha() == 255) {
+                        Color tmpCol = new Color(c.getRed(), c.getGreen(), c.getBlue(), 2);
+                        newImage.setRGB(x, y, tmpCol.getRGB());
+                    }
                 }
             }
+
+            g.drawImage(sheepUndercoatImage, 0, 0, null);
+
+            g.drawImage(sheepWoolImage, 0, sheepImage.getHeight(), null);
+
+            context.offer(KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP), newImage, "png");
         }
 
-        g.drawImage(sheepUndercoatImage, 0, 0, null);
+        if (
+                context.isTexturePresent(sheepBabyKey) ||
+                context.isTexturePresent(babyWoolKey)
+        ) {
+            Texture sheepTexture = context.pollOrPeekVanilla(sheepBabyKey);
+            Texture sheepWoolTexture = context.pollOrPeekVanilla(babyWoolKey);
 
-        g.drawImage(sheepWoolImage, 0, sheepImage.getHeight(), null);
+            if (sheepTexture == null || sheepWoolTexture == null) {
+                return;
+            }
 
-        context.offer(KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP), newImage, "png");
+            context.debug(String.format("Converting baby sheep texture %s", SHEEP_BABY));
+
+            BufferedImage sheepImage = this.readImage(sheepTexture);
+            BufferedImage sheepWoolImage = this.readImage(sheepWoolTexture);
+
+            int width = Math.max(sheepImage.getWidth(), sheepWoolImage.getWidth());
+            sheepImage = ImageUtil.ensureMinWidth(sheepImage, width);
+            sheepWoolImage = ImageUtil.ensureMinWidth(sheepWoolImage, width);
+
+            BufferedImage newImage = new BufferedImage(sheepImage.getWidth(), sheepImage.getHeight() + sheepWoolImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            Graphics g = newImage.getGraphics();
+
+            for (int x = 0; x < sheepImage.getWidth(); x++) {
+                for (int y = 0; y < sheepImage.getHeight(); y++) {
+                    Color c = new Color(sheepImage.getRGB(x, y), true);
+                    if (c.getAlpha() == 255) {
+                        Color tmpCol = new Color(c.getRed(), c.getGreen(), c.getBlue(), 2);
+                        newImage.setRGB(x, y, tmpCol.getRGB());
+                    }
+                }
+            }
+
+            g.drawImage(sheepWoolImage, 0, sheepImage.getHeight(), null);
+
+            context.offer(KeyUtil.key(Key.MINECRAFT_NAMESPACE, SHEEP_BABY), newImage, "png");
+        }
     }
 }

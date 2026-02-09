@@ -144,6 +144,7 @@ public final class PngToTgaMappings {
             put("textures/entity/horse/armor/horse_armor_leather.png", new TgaMapping("textures/entity/horse/armor/horse_armor_leather.tga"));
             put("textures/entity/horse2/armor/horse_armor_leather.png", new TgaMapping("textures/entity/horse2/armor/horse_armor_leather.tga"));
             put("textures/entity/sheep/sheep.png", new TgaMapping("textures/entity/sheep/sheep.tga"));
+            put("textures/entity/sheep/sheep_baby.png", new TgaMapping("textures/entity/sheep/sheep_baby.tga"));
             put("textures/entity/slime/magmacube.png", new TgaMapping("textures/entity/slime/magmacube.tga"));
             put("textures/entity/spider/cave_spider.png", new TgaMapping("textures/entity/spider/cave_spider.tga"));
             put("textures/entity/spider/spider.png", new TgaMapping("textures/entity/spider/spider.tga"));
