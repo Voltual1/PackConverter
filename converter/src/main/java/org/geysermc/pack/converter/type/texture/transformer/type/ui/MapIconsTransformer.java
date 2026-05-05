@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -24,28 +24,25 @@
  *
  */
 
-package org.geysermc.pack.converter.util;
+package org.geysermc.pack.converter.type.texture.transformer.type.ui;
 
+import com.google.auto.service.AutoService;
+import org.geysermc.pack.converter.type.texture.transformer.TextureTransformer;
+import org.geysermc.pack.converter.type.texture.transformer.TransformContext;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-public interface LogListener {
-    default void debug(@NotNull String message) {
-        if (!isDebugEnabled()) return;
-        debugUnchecked(message);
-    }
+import java.io.IOException;
 
-    void debugUnchecked(@NotNull String message);
-
-    void info(@NotNull String message);
-
-    void warn(@NotNull String message);
-
-    void error(@NotNull String message);
-
-    void error(@NotNull String message, @Nullable Throwable exception);
-
-    default boolean isDebugEnabled() {
-        return Boolean.getBoolean("PackConverter.LogDebugMessages");
+@AutoService(TextureTransformer.class)
+public class MapIconsTransformer implements TextureTransformer {
+    @Override
+    public void transform(@NotNull TransformContext context) throws IOException {
+        this.gridTransform(
+                context, true, 4, 4, "map/map_icons.png",
+                "map/decorations/player.png", "map/decorations/frame.png", "map/decorations/red_marker.png", "map/decorations/blue_marker.png",
+                "map/decorations/red_x.png", "map/decorations/target_point.png", "map/decorations/player_off_map.png", null,
+                null, null, null, null, // TODO Colorise player, god damn you bedrock
+                null, "map/decorations/player_off_limits.png", "map/decorations/woodland_mansion.png", "map/decorations/ocean_monument.png"
+        );
     }
 }

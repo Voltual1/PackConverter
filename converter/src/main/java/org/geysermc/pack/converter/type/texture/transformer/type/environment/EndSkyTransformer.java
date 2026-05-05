@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -24,28 +24,31 @@
  *
  */
 
-package org.geysermc.pack.converter.util;
+package org.geysermc.pack.converter.type.texture.transformer.type.environment;
 
+import com.google.auto.service.AutoService;
+import net.kyori.adventure.key.Key;
+import org.geysermc.pack.converter.type.texture.transformer.TextureTransformer;
+import org.geysermc.pack.converter.type.texture.transformer.TransformContext;
+import org.geysermc.pack.converter.util.ImageUtil;
+import org.geysermc.pack.converter.util.KeyUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import team.unnamed.creative.texture.Texture;
 
-public interface LogListener {
-    default void debug(@NotNull String message) {
-        if (!isDebugEnabled()) return;
-        debugUnchecked(message);
-    }
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-    void debugUnchecked(@NotNull String message);
+@AutoService(TextureTransformer.class)
+public class EndSkyTransformer implements TextureTransformer {
+    private static final Key LOCATION = KeyUtil.key(Key.MINECRAFT_NAMESPACE, "environment/end_sky.png");
 
-    void info(@NotNull String message);
+    @Override
+    public void transform(@NotNull TransformContext context) throws IOException {
+        Texture texture = context.peek(LOCATION);
+        if (texture == null) return;
 
-    void warn(@NotNull String message);
+        BufferedImage image = this.readImage(texture);
 
-    void error(@NotNull String message);
-
-    void error(@NotNull String message, @Nullable Throwable exception);
-
-    default boolean isDebugEnabled() {
-        return Boolean.getBoolean("PackConverter.LogDebugMessages");
+        context.offer(LOCATION, ImageUtil.grayscale(image), "PNG");
     }
 }

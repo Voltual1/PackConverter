@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -24,28 +24,19 @@
  *
  */
 
-package org.geysermc.pack.converter.util;
+package org.geysermc.pack.converter.type.texture.transformer.type.particle;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import java.awt.image.BufferedImage;
 
-public interface LogListener {
-    default void debug(@NotNull String message) {
-        if (!isDebugEnabled()) return;
-        debugUnchecked(message);
+public abstract class BaseLeafParticleTransformer extends GridSpritesheetParticleTransformer {
+    public BaseLeafParticleTransformer(String bedrockPath, String javaPath) {
+        super(bedrockPath, javaPath, 3, 4, 5, 5);
     }
 
-    void debugUnchecked(@NotNull String message);
-
-    void info(@NotNull String message);
-
-    void warn(@NotNull String message);
-
-    void error(@NotNull String message);
-
-    void error(@NotNull String message, @Nullable Throwable exception);
-
-    default boolean isDebugEnabled() {
-        return Boolean.getBoolean("PackConverter.LogDebugMessages");
+    @Override
+    public BufferedImage preProcessImage(BufferedImage image) {
+        BufferedImage canvas = new BufferedImage(image.getWidth() + 2, image.getHeight() + 2, BufferedImage.TYPE_INT_ARGB);
+        canvas.getGraphics().drawImage(image, 1, 1, null);
+        return canvas;
     }
 }

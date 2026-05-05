@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -24,28 +24,17 @@
  *
  */
 
-package org.geysermc.pack.converter.util;
+package org.geysermc.pack.converter.type.texture.transformer.type.particle;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import com.google.auto.service.AutoService;
+import org.geysermc.pack.converter.type.texture.transformer.TextureTransformer;
 
-public interface LogListener {
-    default void debug(@NotNull String message) {
-        if (!isDebugEnabled()) return;
-        debugUnchecked(message);
-    }
-
-    void debugUnchecked(@NotNull String message);
-
-    void info(@NotNull String message);
-
-    void warn(@NotNull String message);
-
-    void error(@NotNull String message);
-
-    void error(@NotNull String message, @Nullable Throwable exception);
-
-    default boolean isDebugEnabled() {
-        return Boolean.getBoolean("PackConverter.LogDebugMessages");
+@AutoService(TextureTransformer.class)
+public class SmallGustParticleTransformer extends GridSpritesheetParticleTransformer.Row {
+    public SmallGustParticleTransformer() {
+        super(
+                "particle/small_gust.png", 8, 8,
+                "particle/small_gust_%d.png", 7
+        );
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023 GeyserMC. http://geysermc.org
+ * Copyright (c) 2026 GeyserMC. http://geysermc.org
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -24,28 +24,19 @@
  *
  */
 
-package org.geysermc.pack.converter.util;
+package org.geysermc.pack.converter.type.texture.transformer.type.particle;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import com.google.auto.service.AutoService;
+import org.geysermc.pack.converter.type.texture.transformer.TextureTransformer;
 
-public interface LogListener {
-    default void debug(@NotNull String message) {
-        if (!isDebugEnabled()) return;
-        debugUnchecked(message);
-    }
-
-    void debugUnchecked(@NotNull String message);
-
-    void info(@NotNull String message);
-
-    void warn(@NotNull String message);
-
-    void error(@NotNull String message);
-
-    void error(@NotNull String message, @Nullable Throwable exception);
-
-    default boolean isDebugEnabled() {
-        return Boolean.getBoolean("PackConverter.LogDebugMessages");
+@AutoService(TextureTransformer.class)
+public class CherryLeafParticleTransformer extends GridSpritesheetParticleTransformer {
+    public CherryLeafParticleTransformer() {
+        super(
+                "particle/cherry_petal_atlas.png", 3, 4, 3, 3,
+                "particle/cherry_0.png", "particle/cherry_3.png", "particle/cherry_6.png", "particle/cherry_9.png",
+                "particle/cherry_1.png", "particle/cherry_4.png", "particle/cherry_7.png", "particle/cherry_10.png",
+                "particle/cherry_2.png", "particle/cherry_5.png", "particle/cherry_8.png", "particle/cherry_11.png"
+        );
     }
 }

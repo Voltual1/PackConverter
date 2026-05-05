@@ -32,10 +32,7 @@ import com.google.gson.JsonParser;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class JsonMappings {
     private static final Map<String, JsonMappings> CACHE = new HashMap<>();
@@ -103,5 +100,9 @@ public class JsonMappings {
 
     public List<String> map(String input) {
         return mappings.getOrDefault(input, List.of(input));
+    }
+
+    public Set<Map.Entry<String, List<String>>> entrySet() {
+        return this.mappings.entrySet();
     }
 }
