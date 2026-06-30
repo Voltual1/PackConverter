@@ -11,7 +11,7 @@ sourceSets {
     }
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 dependencies {
     api(project(":pack-schema-api"))
@@ -23,8 +23,8 @@ dependencies {
     api("net.kyori:adventure-api:4.14.0")
     api("net.kyori:adventure-text-serializer-gson:4.14.0")
     api("net.kyori:adventure-text-serializer-legacy:4.14.0")
-    api("team.unnamed:creative-api:1.7.3")
-    api("team.unnamed:creative-serializer-minecraft:1.7.3")
+    api("team.unnamed:creative-api:1.13.6")
+    api("team.unnamed:creative-serializer-minecraft:1.13.6")
 
     compileOnly("com.google.auto.service:auto-service:1.0.1")
     annotationProcessor("com.google.auto.service:auto-service:1.0.1")
