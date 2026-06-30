@@ -10,6 +10,8 @@ sourceSets {
     }
 }
 
+java.sourceCompatibility = JavaVersion.VERSION_17
+
 dependencies {
     api(project(":pack-schema-api"))
     compileOnly(project(":bedrock-pack-schema")) // Is provided by pack-schema-api for consumers, but not for us during compile time
