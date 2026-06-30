@@ -1,3 +1,7 @@
+plugins {
+    `java-library` 
+}
+
 dependencies {
     compileOnly(project(":bedrock-pack-schema")) // Available on compile, but not runtime classpath - we shade it in task below
     implementation("com.google.code.gson:gson:2.10.1")
